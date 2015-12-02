@@ -1,0 +1,47 @@
+<div bgcolor="#A9A9A9">
+     <div style="background-color:Maroon; padding: 10px;">
+                 <a href="@{PageR}" title="Site" style="color:whitesmoke; text-decoration: none; text-align:left;"> | Site | 
+
+               <div style="background-color:Maroon; padding: 20px; text-align: right;">
+                 <a href="@{InicioR}" title="Página Inicial " style="color:whitesmoke; text-decoration: none;"> Inicio | 
+                 <a href="@{UsuarioR}" title="Cadastrar Novos Usuários " style="color:whitesmoke; text-decoration: none;"> Cadastro de Usuário |
+                 <a href="@{ListUserR}" title="Usuários do Sistema" style="color:whitesmoke; text-decoration: none;"> Usuários Cadastrados |  
+              
+                 <a href="@{AlunoR}" title="Cadastrar Novos Alunos" style="color:whitesmoke; text-decoration: none;"> Cadastro de Aluno |
+                 <a href="@{ListAlunoR}" title="Alunos" style="color:whitesmoke; text-decoration: none;"> Alunos Matriculados  |  
+                 
+                 <a href="@{DisciplinaR}" title="Cadastrar Disciplina" style="color:whitesmoke; text-decoration: none;"> Cadastro de Disciplina |  
+                 <a href="@{ListDisciplina2R}" title="Listagem das disciplina" style="color:whitesmoke; text-decoration: none;"> Disciplinas Cadastradas|  
+
+                <div style="background-color:Maroon; padding: 5px; text-align: right;">
+
+                <a href="@{CursosR}" title="Cadastrar Curso" style="color:whitesmoke; text-decoration: none;"> Cadastro de Curso |  
+                 <a href="@{ListCursos2R}" title="Listagem dos cursos" style="color:whitesmoke; text-decoration: none;"> Cursos Cadastrados|  
+ 
+                 <a href="@{ProfessorR}" title="Cadastrar Professor" style="color:whitesmoke; text-decoration: none;"> Cadastro de Professor |
+                 <a href="@{ListProfessor2R}" title="Listagem das professores" style="color:whitesmoke; text-decoration: none;"> Professores Cadastrados|  
+              
+                 <a href="@{ByeR}" title="Logout " style="color:whitesmoke; text-decoration: none;"> Sair do painel 
+
+<div>
+      <body bgcolor="#f3f3f3">
+               <h2 font style="color: dimgray; margin-left: 10px;"> #{y}
+    $maybe mm <- msg
+        #{mm}<br>
+            
+  <div align="center" style="align:center; margin: 5px 225px 15px 225px; border-style: double; border-width: 5px;" "border-color: #FF7FF50""margin-letf:5" >
+   <br><br><br>
+    <form method=post action=@{x} enctype=#{enctype} align="center"> 
+        ^{widget}
+            <br>
+        <input type="submit" value=#{val}> <br>
+               
+                    <br>
+                       
+               
+            
+
+
+
+
+
