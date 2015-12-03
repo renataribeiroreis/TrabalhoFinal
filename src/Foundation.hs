@@ -43,7 +43,6 @@ Disciplina
    cursoid CursosId
    professorid ProfessorId
    deriving Show
-
  
 |]
 

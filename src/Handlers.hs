@@ -45,7 +45,7 @@ postLoginR = do
                     redirect LoginR 
         _ -> redirect LoginR
 
-
+   
 -----[Pagina Inicial]-----------------------------------
 getInicioR :: Handler Html
 getInicioR = defaultLayout [whamlet|
@@ -60,8 +60,8 @@ getInicioR = defaultLayout [whamlet|
           <p> Cursos Especializados para Personagens Ficticios em Geral<br><br>
                 <img src=@{StaticR _SpringfieldElementary_jpg}><br>
                                                             
-                <a href=@{PageR}> << Acesso ao Site >> <br>                                                  
-                <a href=@{LoginR}> << Área Administrador >>   
+                <a href=@{PageR}"style= color:Crimson; text-decoration: none; text-decoration: none;"> << Acesso ao Site >> <br>                                                  
+                <a href=@{LoginR}"style= color:Green; text-decoration: none; text-decoration: none;"> << Área Administrador >>   
 
 |]
 -----[Pagina Usuario]-----------------------------------
@@ -86,10 +86,10 @@ getPageR = defaultLayout [whamlet|
                  <a href="@{ListProfessorR}" title="Professores" style="color:whitesmoke; text-decoration: none;"> Professores |  
                  <a href="@{ContatoR}" title="Contato" style="color:whitesmoke; text-decoration: none;">Contato | 
    <body bgcolor="#A9A9A9">
-   <h1 align="center"> Faculdade de SpringField
-            <br><br><br>
+   <h1 align="center"> Faculdade de SpringField <br><br>
             <img src=@{StaticR _SpringfieldElementary_jpg}><br>
-                                                               
+                   <center> <h4 style="color:SteelBlue";> A Magia do Saber, está nos Estudos que Devemos Aprender." <br> Tell Anderson
+
             
             
               
@@ -162,10 +162,10 @@ getListCursosR = do
              
                 <div style="margin: 1cm 1cm 2cm 2cm; border-style:dashed; border-width: 3px;" "border-color: #FF4500""margin-letf:5" >               
                         
-                             <ul style="color #9932CC; size:3px"> Nome : Sigla 
+                             <ul font style="color #9932CC; size:3px"> Nome : Sigla <br>
                                    
                               $forall Entity pid cursos <- listaC
-                                       <li style="color: dimgray;">#{cursosNome cursos} : <i>#{cursosSigla cursos} <br>
+                                       <li style="color: DarkGreen;">#{cursosNome cursos} : <i>#{cursosSigla cursos} <br>
                      
 |] 
 
@@ -193,17 +193,21 @@ getListDisciplinaR = do
                  <a href="@{ContatoR}" title="Contato" style="color:whitesmoke; text-decoration: none;">Contato | 
    <body bgcolor="#f3f3f3">
                <div>
-                    <h2 font style="color: dimgray; margin-left: 10px;">Disciplinas <br>
+                    <h2 font style="color:orangered; margin-left: 10px;">Disciplinas <br>
                                                                                                  
              
-                <div style="margin: cm 1cm 2cm 2cm; border-style: double; border-width: 5px;" "border-color: #FF7FF50" "margin-letf:5" >               
+                <div style="margin: cm 1cm 2cm 2cm; border-style: groove; border-width: 5px;" "border-color: #FF7FF50" "margin-letf:8 border-radius: 5px;
+" >               
                               
                          <ul style="color: #0000FF;  margin-left: 5px;font size:2" >Sigla : Nome 
                          $forall Entity pid disciplina <- listaD
                                 <br>
-                             <style="color: DarkGreen;  margin-left: 8px;">#{disciplinaSigla disciplina} : <i>#{disciplinaNome disciplina}
+                             <style="color: DarkGreen;  margin-left: 15px;"> #{disciplinaSigla disciplina} : <i>#{disciplinaNome disciplina}:
+                                                                                
                       
 |]
+
+
 
 -----[Listar professor]----------------------------------------------
 getListProfessorR :: Handler Html
@@ -227,7 +231,7 @@ getListProfessorR = do
                  <a href="@{ContatoR}" title="Contato" style="color:whitesmoke; text-decoration: none;">Contato | 
     <body bgcolor="#f3f3f3">
                <div>
-                    <h2 font style="color: dimgray; margin-left: 10px;">Nossos Professores <br>
+                    <h2 font style="color: #FF00FF; margin-left: 10px;">Nossos Professores <br>
                                                                                                  
              
                 <div style="margin: 1cm 1cm 2cm 2cm; border-style: double; border-width: 5px;" "border-color: #FF7FF50""margin-letf:5" >               
@@ -236,7 +240,7 @@ getListProfessorR = do
                         <ul style="color: #0000FF;">Nome : Graduação 
                                  
                          $forall Entity pid professor <- listaP
-                               <li style="color: dimgray;">#{professorNome professor} : <i>#{professorGraduacao professor}
+                               <li style="color:indigo;">#{professorNome professor} : <i>#{professorGraduacao professor} 
                               
 
 
@@ -269,6 +273,8 @@ getContatoR = defaultLayout [whamlet|
              
                 <div style="margin: 1cm 1cm 2cm 2cm; border-style: double; border-width: 5px;" "border-color: #FF7FF50""margin-letf:5" >               
                                 <h4 style="margin-left: 20px; margin-right:20px; color: #0000FF;" align="justify">
+                                    <center><img src=@{StaticR _Contato_jpg}><br>
+                                    
                                     <ul>Endereço: 
                                         <li style="color: dimgray;">19 Plympton Street,SpringField
 
@@ -276,8 +282,9 @@ getContatoR = defaultLayout [whamlet|
                                         <li style="color: dimgray;">(13) 8888-4321
                                             <li style="color: dimgray;">(13) 8888-1234
 
-                                           <ul>E-mail: 
+                                    <ul>E-mail: 
                                         <li style="color: dimgray;">faculdade_springfield@webmail.com
+
                                             
                                                   
                         
@@ -545,7 +552,7 @@ postAlunoR = do
     case result of
         FormSuccess usr -> do
             runDB $ insert usr
-            setMessage $ [shamlet| <p> Aluno inserido com sucesso! |]
+            setMessage $ [shamlet|  |]
             redirect ContatoAlunoR
         _ -> redirect ContatoAlunoR
 
@@ -554,12 +561,40 @@ postAlunoR = do
 getContatoAlunoR :: Handler Html
 getContatoAlunoR = defaultLayout [whamlet| 
 
+<div bgcolor="#A9A9A9">
+     <div style="background-color:Maroon; padding: 10px;">
+                 <a href="@{PageR}" title="Site" style="color:whitesmoke; text-decoration: none; text-align:left;"> | Site | 
+
+               <div style="background-color:Maroon; padding: 20px; text-align: right;">
+                 <a href="@{InicioR}" title="Página Inicial " style="color:whitesmoke; text-decoration: none;"> Inicio | 
+                 <a href="@{UsuarioR}" title="Cadastrar Novos Usuários " style="color:whitesmoke; text-decoration: none;"> Cadastro de Usuário |
+                 <a href="@{ListUserR}" title="Usuários do Sistema" style="color:whitesmoke; text-decoration: none;"> Usuários Cadastrados |  
+              
+                 <a href="@{AlunoR}" title="Cadastrar Novos Alunos" style="color:whitesmoke; text-decoration: none;"> Cadastro de Aluno |
+                 <a href="@{ListAlunoR}" title="Alunos" style="color:whitesmoke; text-decoration: none;"> Alunos Matriculados  |  
+                 
+                 <a href="@{DisciplinaR}" title="Cadastrar Disciplina" style="color:whitesmoke; text-decoration: none;"> Cadastro de Disciplina |  
+                 <a href="@{ListDisciplina2R}" title="Listagem das disciplina" style="color:whitesmoke; text-decoration: none;"> Disciplinas Cadastradas|  
+
+                <div style="background-color:Maroon; padding: 5px; text-align: right;">
+
+                <a href="@{CursosR}" title="Cadastrar Curso" style="color:whitesmoke; text-decoration: none;"> Cadastro de Curso |  
+                 <a href="@{ListCursos2R}" title="Listagem dos cursos" style="color:whitesmoke; text-decoration: none;"> Cursos Cadastrados|  
+ 
+                 <a href="@{ProfessorR}" title="Cadastrar Professor" style="color:whitesmoke; text-decoration: none;"> Cadastro de Professor |
+                 <a href="@{ListProfessor2R}" title="Listagem das professores" style="color:whitesmoke; text-decoration: none;"> Professores Cadastrados|  
+              
+                 <a href="@{ByeR}" title="Logout " style="color:whitesmoke; text-decoration: none;"> Sair do painel 
+
+<div>
+      <body bgcolor="#f3f3f3">
+
   
-                    <h2 font style="color:Crimson; margin-left: 10px;">Contato <br>
+                    <h2 font style="color:Crimson; margin-left: 10px;">Contato <br> <p> Aluno inserido com sucesso!
              
                 <div style="margin: 1cm 1cm 2cm 2cm; border-style: double; border-width: 5px;" "border-color: #FF7FF50""margin-letf:5" >               
                                 <h4 style="margin-left: 20px; margin-right:20px; color: #0000FF;" align="justify">
-                                    <p> Em Breve o Responsável irá entrar em contato com o Aluno Cadastrado para informações sobre os cursos disponíveis
+                                    Em Breve o Responsável irá entrar em contato com o Aluno Cadastrado para informações sobre os cursos disponíveis com as informações solicitadas na secretaria da faculdade
                                             
                                                   
                         
@@ -771,11 +806,12 @@ getByeR = do
    <body bgcolor="#A9A9A9">
    <h1 align="center"> Obrigado pela Visita!
             <br>
-            <a href=@{LoginR}>Acessar tela de Login
+                <center> <img src=@{StaticR _Bye_jpg}><br>
+            <a href=@{LoginR}"style= color:Crimson; text-decoration: none; text-decoration: none;">Acessar tela de Login
 
              <br>
                
-            <a href=@{InicioR}>Acessar a Página Principal
+            <a href=@{InicioR}"style= color:green; text-decoration: none; text-decoration: none;">Acessar a Página Principal
 |]
 
 
