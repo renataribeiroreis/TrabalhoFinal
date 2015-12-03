@@ -1,4 +1,11 @@
 # TrabalhoFinal------
+
+Usuário administrador: admin Senha:123456
+
+Observação importante: O Favicon aparece somente no navegador Firefox
+
+
+
 Informações sobre o site
 O site  simula o site de uma faculdade ficticia,onde o intuito é trabahar a disciplina aprendida e os tópicos estudados durante o semestre.
 Teremos dois niveis de logins: usuário(acesso restrito)neste acesso o usuário terá apenas os seguintes acessos:
@@ -9,7 +16,6 @@ Informações sobre o curso.
 Já o admin(nivel com maior privilegios)terá os seguintes acessos:
 Cadastro de Alunos.
 Cadastro de Professores.
-Edição do curriculo do corpo docente.
 Edição e inclusão de cursos.
 
 O site  foi desenvolvido em linguagem Haskell e para design utilizado o HTML e CSS.
